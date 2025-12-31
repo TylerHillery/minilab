@@ -2,8 +2,6 @@
 
 This project sets up monitoring for my homelab.
 
-## Architecture
-
 ## Metrics Collection
 
 Each PC will run an [OTel Collector](https://opentelemetry.io/docs/collector/) as a [systemd-managed binary service](https://opentelemetry.io/docs/collector/install/binary/linux/#automatic-service-configuration) using the [host metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver). Each collector will use the [OTLP gRPC exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/main/exporter/otlpexporter) to send metrics to a centrall deployed [gateway collector](https://opentelemetry.io/docs/collector/deployment/gateway/).
@@ -68,11 +66,6 @@ flowchart LR
     end
 
 ```
-
-##  Networking
-Each PC in the homelab will have tailscaled installed with the `homelab` tag. The VPS will also have tailscale installed with the `prod` tag. All services will be able to communicate with eachother over the tailnet.
-
-The VPS will also have [Caddy](https://caddyserver.com/) deployed which will handle TLS termination and HTTPS routing for the backend API service.
 
 ## Hardware
 
