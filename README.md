@@ -28,7 +28,7 @@ The gateway collector acts as a central aggregation point for all other collecto
 
 2. OTLP gRPC Exporter:
 
-   Metrics are exported via OTLP gRPC to another OTel collector running as a sidecar alongside a backend API service. The side car collector will send metrics to the backend API service via HTTP. Both the sidecar collector and the backend API are deployed as Docker containers on a VPS. The backend API exposes a Server-Sent Events (SSE) endpoint, which streams metrics in real time to a SPA-based frontend served at `minilab.tylertries.com`.
+   Metrics are exported via OTLP gRPC to another OTel collector running as a sidecar alongside a backend API service. The side car collector will send metrics to the backend API service via HTTP. Both the sidecar collector and the backend API are deployed as Docker containers on a VPS. The backend API exposes a Server-Sent Events (SSE) endpoint, which streams metrics in real time to a SPA-based frontend served at `homelab.tylertries.com`.
 
 ```mermaid
 flowchart LR
